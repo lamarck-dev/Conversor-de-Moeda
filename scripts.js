@@ -3,36 +3,11 @@ const selectOrigin = document.querySelector(".select-origin"); // recebe o SELEC
 const selectDestination = document.querySelector(".select-destination"); // recebe o SELECT de destino
 
 const currencyType = [
-  {
-    code: "BRL",
-    name: "Real Brasileiro",
-    flag: "./assets/br.png",
-    format: "pt-BR",
-  },
-  {
-    code: "USD",
-    name: "Dólar Americano",
-    flag: "./assets/usa.png",
-    format: "en-US",
-  },
-  {
-    code: "EUR",
-    name: "Euro",
-    flag: "./assets/euro.png",
-    format: "de-DE",
-  },
-  {
-    code: "ARS",
-    name: "Peso Argentino",
-    flag: "./assets/arg.png",
-    format: "es-AR",
-  },
-  {
-    code: "GBP",
-    name: "Libra Esterlina",
-    flag: "./assets/lbes.png",
-    format: "en-GB",
-  },
+  {code: "BRL", name: "Real Brasileiro", flag: "./assets/br.png", format: "pt-BR",},
+  {code: "USD", name: "Dólar Americano", flag: "./assets/usa.png", format: "en-US",},
+  {code: "EUR", name: "Euro", flag: "./assets/euro.png", format: "de-DE",},
+  {code: "ARS", name: "Peso Argentino", flag: "./assets/arg.png", format: "es-AR",},
+  {code: "GBP", name: "Libra Esterlina", flag: "./assets/lbes.png", format: "en-GB",},
 ];
 
 async function convertCurrency() {
@@ -44,15 +19,9 @@ async function convertCurrency() {
   const currencyValueOrigin = document.querySelector(".currency-value-origin"); // recebe o VALOR original
   //------------------------------------------------------------------------------------------------------------
   // VARIAVEIS de destino
-  const labelCurrencyDestination = document.getElementById(
-    "label-currency-destination"
-  ); // recebe o NOME da moeda de destino
-  const currencyDestinationImg = document.querySelector(
-    ".currency-destination-img"
-  ); // recebe o IMAGEM da moeda de destino
-  const currencyValueDestination = document.querySelector(
-    ".currency-value-destination"
-  ); // recebe o VALOR convertido
+  const labelCurrencyDestination = document.getElementById("label-currency-destination"); // recebe o NOME da moeda de destino
+  const currencyDestinationImg = document.querySelector(".currency-destination-img"); // recebe o IMAGEM da moeda de destino
+  const currencyValueDestination = document.querySelector(".currency-value-destination"); // recebe o VALOR convertido
 
   let factor = selectOrigin.value + "-" + selectDestination.value; // constroi o fator de ENVIO
   let returnFactor = selectOrigin.value + selectDestination.value; // constroi o nome do OBJETO recebido
@@ -116,6 +85,7 @@ async function convertCurrency() {
 }
 
 // fuction FUNCIONANDO (pensar numa solução mais INTELIGENTE)
+// o código abaixo está sendo melhorado para eliminar os (IFs)
 function disableCurrency() {
   // a linha ABAIXO é uma idéia para otimizar essa função
   // document.getElementById(selectOrigin.value).setAttribute("disabled", "");
