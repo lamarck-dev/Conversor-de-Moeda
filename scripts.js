@@ -61,9 +61,6 @@ async function convertCurrency() {
   const currencyFactor = data[returnFactor].high; // pegando o FATOR DE CONVERSÃO
   const conversionResult = inputCurrencyValue * currencyFactor; // calculo da CONVERSÃO
 
-  // const inptOrigin = selectOrigin.value;
-  // const inptDestination = selectDestination.value;
-
   // laço da MOEDA DE ORIGEM
   let codeOri = "",
     nameOri = "",
@@ -110,7 +107,7 @@ async function convertCurrency() {
   currencyDestinationImg.src = flagDest; // coloca a bandeira no destino
 }
 
-// fuction FUNCIONANDO (pensar numa solução mais INTELIGENTE)
+// função desabilita moeda de DESTINO selecionada na ORIGEM
 function disableCurrency() {
   currencyType.forEach((registry) => {
     if (selectOrigin.value === registry.code) {
