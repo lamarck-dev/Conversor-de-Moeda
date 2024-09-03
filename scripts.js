@@ -115,31 +115,15 @@ async function convertCurrency() {
   currencyDestinationImg.src = flagDest; // coloca a bandeira no destino
 }
 
-// fuction FUNCIONANDO (pensar numa solução mais INTELIGENTE)
+// função desabilita no DESTINO moeda escolhida na ORIGEM
 function disableCurrency() {
-  // a linha ABAIXO é uma idéia para otimizar essa função
-  // document.getElementById(selectOrigin.value).setAttribute("disabled", "");
-  if (selectOrigin.value == "BRL") {
-    document.getElementById("BRL").setAttribute("disabled", "");
-    document.getElementById("USD").removeAttribute("disabled", "");
-    document.getElementById("EUR").removeAttribute("disabled", "");
-    document.getElementById("ARS").removeAttribute("disabled", "");
-  } else if (selectOrigin.value == "USD") {
-    document.getElementById("USD").setAttribute("disabled", "");
-    document.getElementById("BRL").removeAttribute("disabled", "");
-    document.getElementById("EUR").removeAttribute("disabled", "");
-    document.getElementById("ARS").removeAttribute("disabled", "");
-  } else if (selectOrigin.value == "EUR") {
-    document.getElementById("EUR").setAttribute("disabled", "");
-    document.getElementById("BRL").removeAttribute("disabled", "");
-    document.getElementById("USD").removeAttribute("disabled", "");
-    document.getElementById("ARS").removeAttribute("disabled", "");
-  } else if (selectOrigin.value == "ARS") {
-    document.getElementById("ARS").setAttribute("disabled", "");
-    document.getElementById("BRL").removeAttribute("disabled", "");
-    document.getElementById("USD").removeAttribute("disabled", "");
-    document.getElementById("EUR").removeAttribute("disabled", "");
-  }
+  currencyType.forEach((registry) => {
+    if (selectOrigin.value === registry.code) {
+      document.getElementById(selectOrigin.value).setAttribute("disabled", "");
+    } else if (selectOrigin.value != selectDestination.value) {
+      document.getElementById(registry.code).removeAttribute("disabled", "");
+    }
+  });
 }
 // função da mudança do select de DESTINO
 function recharge() {
