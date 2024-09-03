@@ -112,7 +112,7 @@ function disableCurrency() {
   currencyType.forEach((registry) => {
     if (selectOrigin.value === registry.code) {
       document.getElementById(selectOrigin.value).setAttribute("disabled", "");
-    } else if (selectOrigin.value != selectDestination.value) {
+    } else if (selectOrigin.value != registry.code) {
       document.getElementById(registry.code).removeAttribute("disabled", "");
     }
   });
