@@ -15,12 +15,7 @@ const currencyType = [
     flag: "./assets/usa.png",
     format: "en-US",
   },
-  {
-    code: "EUR",
-    name: "Euro",
-    flag: "./assets/euro.png",
-    format: "de-DE",
-  },
+  { code: "EUR", name: "Euro", flag: "./assets/euro.png", format: "de-DE" },
   {
     code: "ARS",
     name: "Peso Argentino",
@@ -115,7 +110,7 @@ async function convertCurrency() {
   currencyDestinationImg.src = flagDest; // coloca a bandeira no destino
 }
 
-// função desabilita no DESTINO moeda escolhida na ORIGEM
+// fuction FUNCIONANDO (pensar numa solução mais INTELIGENTE)
 function disableCurrency() {
   currencyType.forEach((registry) => {
     if (selectOrigin.value === registry.code) {
